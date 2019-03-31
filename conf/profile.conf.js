@@ -4,7 +4,7 @@ exports.config = {
     waitForUI5Delta: 200,
     getPageTimeout: 10000,
     allScriptsTimeout: 11000,
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 60000,
     waitForUI5PollingInterval: 400
   },
   useClassicalWaitForUI5: false,
@@ -109,7 +109,8 @@ exports.config = {
         '*': {
           chromeOptions: {
             'args': [
-              'disable-infobars'
+              'disable-infobars',
+              'ignore-certificate-errors' //Required for ProcessDirect internal
             ]
           },
           /*
