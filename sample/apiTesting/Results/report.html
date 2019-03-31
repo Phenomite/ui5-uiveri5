@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .suites-menu {
+      width: 100%;
+      background-color: #add8e6;
+    }
+
+    .suites-menu .name {
+      display: inline-block;
+      padding: 10px;
+    }
+
+    .suites-menu .name.selected {
+      background-color: #90c9dc;
+      font-weight: 600;
+    }
+
+    .suite {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary {
+      padding: 10px 20px;
+    }
+
+    .summary span {
+      padding-right: 20px;
+    }
+
+    .specs {
+      display: flex;
+    }
+
+    .specs-menu {
+      align-self: flex-start;
+      width: 500px;
+      background-color: #add8e6;
+    }
+
+    .specs-menu .selected {
+      background-color: #90c9dc;
+    }
+
+    .specs .name {
+      padding: 10px;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .name::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      border-radius: 50px;
+    }
+
+    .name.passed::before, .spec.passed .summary {
+      background-color: #3cb371;
+    }
+
+    .name.failed::before, .spec.failed .summary {
+      background-color: #ff6347;
+    }
+
+    .name:hover {
+      cursor: pointer;
+    }
+
+    .spec {
+      width: 100%;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #add8e6;
+    }
+
+    .step.passed {
+      background-color: #3cb37166;
+    }
+
+    .step.failed {
+      background-color: #ff634766;
+    }
+
+    .step .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 20px;
+    }
+
+    .step .content.reverse {
+      flex-direction: column-reverse;
+    }
+
+    code {
+      width: 90%;
+      height: 300px;
+      padding: 10px;
+      background-color: #ffffff;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
+    img {
+      width: 300px;
+      margin: 20px 0;
+    }
+
+    .strong {
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="suites-menu">
+  
+  <div class="name" onClick="selectSuite(0)">UI5Test</div>
+  
+</div>
+
+<div class="suite hidden">
+  <div class="summary">
+    <span class="strong">Specs</span>
+    <span>Total: 4</span>
+    <span>Passed: 2</span>
+    <span>Failed: 2</span>
+    <span>Pending: 0</span>
+    <span>Disabled: 0</span>
+    <span>Duration: 18.5 sec</span>
+  </div>
+  <div class="specs">
+    <div class="specs-menu">
+      
+      <div class="name passed" onClick="selectSpec(0, 0)">Step 1 - Should check page title</div>
+      
+      <div class="name passed" onClick="selectSpec(0, 1)">Step 2 - Should go to second page</div>
+      
+      <div class="name failed" onClick="selectSpec(0, 2)">Step 3 - Should make api call and check response body</div>
+      
+      <div class="name failed" onClick="selectSpec(0, 3)">Step 4 - Should make api call with auth and check response body</div>
+      
+    </div>
+    
+    <div class="spec passed 0 hidden">
+      <div class="summary">
+        <div class="strong">Step 1 - Should check page title</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 1</span>
+        <span>Passed: 1</span>
+        <span>Failed: 0</span>
+        <span>Duration: 13.4 sec</span>
+        
+      </div>
+      
+      
+      <div class="step passed">
+        <p class="strong">1.</p>
+        <div class="content ">
+          
+          <div>Expectation PASSED: Expected &#39;Hello World&#39; toBe &#39;Hello World&#39;</div>
+          
+          
+          
+          <a href="UI5Test-Step-1---Should-check-page-title_0_pass_2019-03-31T09-43-04.png" target="_blank">
+            <img data-source="UI5Test-Step-1---Should-check-page-title_0_pass_2019-03-31T09-43-04.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="spec passed 1 hidden">
+      <div class="summary">
+        <div class="strong">Step 2 - Should go to second page</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 1</span>
+        <span>Passed: 1</span>
+        <span>Failed: 0</span>
+        <span>Duration: 3.6 sec</span>
+        
+      </div>
+      
+      
+      <div class="step ">
+        <p class="strong">1.</p>
+        <div class="content reverse">
+          
+          
+          <div>Execute 'click' on element with ID '__button0'
+            
+          </div>
+          
+          
+          <a href="click___button0_0_2019-03-31T09-43-06.png" target="_blank">
+            <img data-source="click___button0_0_2019-03-31T09-43-06.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+      
+      <div class="step passed">
+        <p class="strong">2.</p>
+        <div class="content ">
+          
+          <div>Expectation PASSED: Expected &#39;Hello Page 2&#39; toBe &#39;Hello Page 2&#39;</div>
+          
+          
+          
+          <a href="UI5Test-Step-2---Should-go-to-second-page_1_pass_2019-03-31T09-43-08.png" target="_blank">
+            <img data-source="UI5Test-Step-2---Should-go-to-second-page_1_pass_2019-03-31T09-43-08.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="spec failed 2 hidden">
+      <div class="summary">
+        <div class="strong">Step 3 - Should make api call and check response body</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 1</span>
+        <span>Passed: 0</span>
+        <span>Failed: 1</span>
+        <span>Duration: 0.8 sec</span>
+        
+      </div>
+      
+      
+      <div class="step failed">
+        <p class="strong">1.</p>
+        <div class="content ">
+          
+          <div>Expectation FAILED: Failed: request is not defined</div>
+          
+          
+          
+          <a href="UI5Test-Step-3---Should-make-api-call-and-check-response-body_0_fail_2019-03-31T09-43-09.png" target="_blank">
+            <img data-source="UI5Test-Step-3---Should-make-api-call-and-check-response-body_0_fail_2019-03-31T09-43-09.png"/>
+          </a>
+          
+          <code>ReferenceError: request is not defined
+    at UserContext.&lt;anonymous&gt; (C:\Users\Bob\Documents\GitHub\ui5-uiveri5\sample\apiTesting\UI5Test.spec.js:13:5)
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at asyncRun (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2974:25)
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+From: Task: Run it(&quot;Step 3 - Should make api call and check response body&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:64:48
+    at ControlFlow.emit (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\events.js:62:21)
+    at ControlFlow.shutdown_ (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2674:10)
+    at shutdownTask_.MicroTask (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2599:53)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (C:\Users\Bob\Documents\GitHub\ui5-uiveri5\sample\apiTesting\UI5Test.spec.js:12:3)
+    at addSpecsToSuite (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (C:\Users\Bob\Documents\GitHub\ui5-uiveri5\sample\apiTesting\UI5Test.spec.js:2:1)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)</code>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="spec failed 3 hidden">
+      <div class="summary">
+        <div class="strong">Step 4 - Should make api call with auth and check response body</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 1</span>
+        <span>Passed: 0</span>
+        <span>Failed: 1</span>
+        <span>Duration: 0.8 sec</span>
+        
+      </div>
+      
+      
+      <div class="step failed">
+        <p class="strong">1.</p>
+        <div class="content ">
+          
+          <div>Expectation FAILED: Failed: request is not defined</div>
+          
+          
+          
+          <a href="UI5Test-Step-4---Should-make-api-call-with-auth-and-check-response-body_0_fail_2019-03-31T09-43-10.png" target="_blank">
+            <img data-source="UI5Test-Step-4---Should-make-api-call-with-auth-and-check-response-body_0_fail_2019-03-31T09-43-10.png"/>
+          </a>
+          
+          <code>ReferenceError: request is not defined
+    at UserContext.&lt;anonymous&gt; (C:\Users\Bob\Documents\GitHub\ui5-uiveri5\sample\apiTesting\UI5Test.spec.js:21:15)
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at asyncRun (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2974:25)
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+From: Task: Run it(&quot;Step 4 - Should make api call with auth and check response body&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasminewd2\index.js:64:48
+    at ControlFlow.emit (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\events.js:62:21)
+    at ControlFlow.shutdown_ (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2674:10)
+    at shutdownTask_.MicroTask (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\selenium-webdriver\lib\promise.js:2599:53)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (C:\Users\Bob\Documents\GitHub\ui5-uiveri5\sample\apiTesting\UI5Test.spec.js:20:3)
+    at addSpecsToSuite (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Bob\AppData\Roaming\npm\node_modules\@ui5\uiveri5\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (C:\Users\Bob\Documents\GitHub\ui5-uiveri5\sample\apiTesting\UI5Test.spec.js:2:1)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)</code>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  (function init () {
+    var suiteMenuElement = document.getElementsByClassName("suites-menu")[0];
+    var specMenuElement = document.getElementsByClassName("specs-menu")[0];
+    selectSuite(0);
+  })();
+
+  function selectSuite(suiteIndex) {
+    select(document, suiteIndex, "suites-menu", "suite");
+    selectSpec(suiteIndex, 0);
+  }
+
+  function selectSpec(suiteIndex, specIndex) {
+    var parentElement = document.getElementsByClassName("specs")[suiteIndex];
+    select(parentElement, specIndex, "specs-menu", "spec");
+
+    var specElements = parentElement.getElementsByClassName("spec");
+    var specImageElements = specElements[specIndex].getElementsByTagName("img");
+    Array.prototype.forEach.call(specImageElements, function (img) {
+      img.src = img.getAttribute("data-source");
+    });
+  }
+
+  function select(parentElement, index, menuClassName, itemClassName) {
+    var menuElement = parentElement.getElementsByClassName(menuClassName)[0];
+    var menuElements = menuElement.getElementsByClassName("name");
+    Array.prototype.forEach.call(menuElements, function (el) {
+      el.classList.remove("selected");
+    });
+    menuElements[index].classList.add("selected");
+
+    var itemElements = parentElement.getElementsByClassName(itemClassName);
+    Array.prototype.forEach.call(itemElements, function (el) {
+      el.classList.add("hidden");
+    });
+    itemElements[index].classList.remove("hidden");
+  }
+</script>
+</body>
+</html>

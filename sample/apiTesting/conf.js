@@ -1,12 +1,23 @@
 exports.config = {
-  profile: 'visual',
-  apiURL:'https://helloworld1i304310trial.hanatrial.ondemand.com',
+  profile: 'integration',
+  apiURL: 'https://helloworld1i304310trial.hanatrial.ondemand.com',
   baseUrl: 'https://helloworld1i304310trial.hanatrial.ondemand.com/helloworld2',
-  browsers:[{
-    platformResolution:'1270x720',
+  browsers: [{
+    browserName: 'chrome',
+    platformResolution: '1270x720',
   }],
   reporters: [
-    {name:'./reporter/htmlReporter',reportName:'reports/test.html',templateName:'report.tpl.html'},
-    {name:'./reporter/screenshotReporter', screenshotsRoot: 'myScreenshots/'}
-  ]
+    //Default template pre-defined
+    //{name:'./reporter/htmlReporter',reportName:'Results/report.html'},
+    {
+      name: './reporter/screenshotReporter',
+      screenshotsRoot: 'Results/'
+    }
+  ],
+  takeScreenshot: {
+    //Change these to reduce disk space perhaps
+    onExpectFailure: true,
+    onExpectSuccess: true,
+    onAction: true
+  }
 };
